@@ -1,10 +1,10 @@
-object ReadFileFromHadoopApp extends App {
+object ReadFileFromYarnApp extends App {
   import org.apache.spark.sql.SparkSession
 
   val spark = SparkSession
     .builder()
     .appName("ReadFileFromHadoopApp")
-    .master("local[*]")
+    .master("yarn")
     .getOrCreate()
 
   val df = spark
